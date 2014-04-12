@@ -9,28 +9,25 @@
 <body class="ht-default">
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="container">
-      <a class="navbar-brand" href="#">RailsForum</a>
+      <%= link_to "RailsForum", root_path, class: 'navbar-brand' %>
     </div>
   </nav>
-  <% if current_page?('/') -%>
-  <div class="jumbotron">
-    <div class="container">
-      <h1>RailsForum</h1>
-      <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-    </div>
-  </div>
-  <% end -%>
   <div class="container">
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: 'alert ' + ('alert-success' if name == :notice || 'alert-error') %>
     <% end -%>
+    <ol class="breadcrumb">
+      <li><a href="#"><%= link_to "RailsForum", root_path %></a></li>
+      <li class="active">Forum List</li>
+    </ol>
     <div class="row">
       <%= yield %>
     </div>
     <hr />
     <footer>
-      <p>&copy; Mikelat</p>
+      <p>&copy; <%= Time.now.year %> Mike Lat</p>
     </footer>
+    <%= debug(params) if Rails.env.development? %>
   </div>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
