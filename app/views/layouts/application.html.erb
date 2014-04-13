@@ -16,10 +16,7 @@
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: 'alert ' + ('alert-success' if name == :notice || 'alert-error') %>
     <% end -%>
-    <ol class="breadcrumb">
-      <li><a href="#"><%= link_to "RailsForum", root_path %></a></li>
-      <li class="active">Forum List</li>
-    </ol>
+    <%= render "layouts/breadcrumbs" %>
     <div class="row">
       <%= yield %>
     </div>

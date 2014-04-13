@@ -1,0 +1,22 @@
+<% @forums[0].each do |category| %>
+<div class="panel panel-default forum-list">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= category.title %></h3>
+  </div>
+  <% unless @forums[category.id].nil? %>
+  <ul class="list-group">
+    <% @forums[category.id].each do |forum| %>
+    <li class="list-group-item forum">
+      <a class="forum-icon" href="#">
+        <%= image_tag "forum_read.png" %>
+      </a>
+      <h4><%= link_to forum.title %></h4>
+      <div class="forum-text">
+        <%= forum.description %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+<% end %>
