@@ -1,3 +1,4 @@
+<% unless @forums.nil? %>
 <% @forums[0].each do |category| %>
 <div class="panel panel-default forum-list">
   <div class="panel-heading">
@@ -19,4 +20,5 @@
   </ul>
   <% end %>
 </div>
+<% end %>
 <% end %>

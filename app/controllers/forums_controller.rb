@@ -7,6 +7,6 @@ class ForumsController < ApplicationController
 
   private
     def set_breadcrumb
-      add_breadcrumb I18n.t('forum-list'), forums_path
+      add_breadcrumb t('forums.list'), forums_path
     end
 end

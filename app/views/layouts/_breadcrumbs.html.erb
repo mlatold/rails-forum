@@ -1,5 +1,4 @@
 <ol class="breadcrumb">
-  <li><a href="#"><%= link_to "RailsForum", root_path %></a></li>
   <% @breadcrumbs.each do |breadcrumb| %>
     <% if breadcrumb == @breadcrumbs.last %>
       <li class="active"><%= breadcrumb[:title] %></li>
