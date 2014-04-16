@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="ht-default">
   <nav class="navbar navbar-inverse" role="navigation">
@@ -17,9 +18,7 @@
       <%= content_tag :div, msg, class: 'alert ' + ('alert-success' if name == :notice || 'alert-error') %>
     <% end -%>
     <%= render "layouts/breadcrumbs" %>
-    <div class="row">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <hr />
     <footer>
       <p>&copy; <%= Time.now.year %> Mike Lat</p>

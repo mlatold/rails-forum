@@ -1,0 +1,22 @@
+<h1><%= t ".sign_in" %></h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, t("activerecord.attributes.user.email") %>
+    <%= f.text_field :email, class: "form-control", tabindex: 1 %>
+    <p class="help-block"><%= t(".no_account_message_html", :link => link_to(t(".no_account_link"), "#")) %></p>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, t("activerecord.attributes.user.password") %>
+    <%= f.password_field :password, class: "form-control", tabindex: 2 %>
+    <p class="help-block"><%= t(".forgot_password_message_html", :link => link_to(t(".forgot_password_link"), "#")) %></p>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <%= f.label :remember, f.check_box(:remember, tabindex: 3) + t(".remember_login") %>
+    </div>
+  </div>
+  <div class="form-group">
+  <%= f.submit t(".sign_in"), class: "btn btn-large btn-primary", tabindex: 4 %>
+  </div>
+<% end %>
