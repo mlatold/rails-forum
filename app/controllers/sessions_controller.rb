@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     add_breadcrumb t(".sign_in")
+    #flash.now[:notice] = "Post successfully created"
   end
 
   def create

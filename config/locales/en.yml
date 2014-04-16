@@ -31,8 +31,6 @@ en:
       remember_login: "Remember my login on this computer"
       sign_in: "Sign In"
 
-
-
   activerecord:
     attributes:
       user:

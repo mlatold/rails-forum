@@ -14,10 +14,10 @@
     </div>
   </nav>
   <div class="container">
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: 'alert ' + ('alert-success' if name == :notice || 'alert-error') %>
-    <% end -%>
     <%= render "layouts/breadcrumbs" %>
+    <% flash.each do |name, msg| -%>
+      <%= flash_msg name, msg %>
+    <% end -%>
     <%= yield %>
     <hr />
     <footer>

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :init
+  include ApplicationHelper
 
 
 
@@ -11,10 +12,11 @@ class ApplicationController < ActionController::Base
     def init
       I18n.locale = params[:locale] || I18n.default_locale
       @breadcrumbs = [{:title => "RailsForum", :url => root_path}]
-    end
 
-    def add_breadcrumb(title, url=nil)
-      @breadcrumbs << {:title => title, :url => url}
+      # New session
+      if session[:user_id] == nil
+        session[:user_id] = 0
+      end
     end
 
 end
