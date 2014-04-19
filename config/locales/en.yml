@@ -21,18 +21,23 @@
 
 en:
   forums:
-    list: "Forum List"
+    list: Forum List
   sessions:
     new:
-      no_account_message_html: "If you do not have an account, click %{link}."
-      no_account_link: "here"
-      forgot_password_message_html: "If you have forgotten your password, click %{link}."
-      forgot_password_link: "here"
-      remember_login: "Remember my login on this computer"
-      sign_in: "Sign In"
+      no_account_message_html: If you do not have an account, click %{link}.
+      no_account_link: here
+      forgot_password_message_html: If you have forgotten your password, click %{link}.
+      forgot_password_link: here
+      remember_login: Remember my login on this computer
+      sign_in: Sign In
+  users:
+    new:
+      sign_up: Sign Up
+      confirm_password: Confirm Password
 
   activerecord:
     attributes:
       user:
-        email: "E-mail Address"
-        password: "Password"
+        name: Display Name
+        email: E-mail Address
+        password: Password
