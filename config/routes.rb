@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'forums#index'
 
-  resources :users,    only: [:index, :new]
+  resources :users,    only: [:index, :create, :new]
   resources :forums,   only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
 

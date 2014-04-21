@@ -7,10 +7,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
-
-
   private
     def generate_hash
-      Digest::SHA1.hexdigest(SecureRandom.urlsafe_base64.to_s)
+      #Digest::SHA1.hexdigest(SecureRandom.urlsafe_base64.to_s)
     end
 end

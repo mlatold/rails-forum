@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419040952) do
+ActiveRecord::Schema.define(version: 20140420042532) do
 
   create_table "forums", force: true do |t|
     t.string   "title"
@@ -25,10 +25,15 @@ ActiveRecord::Schema.define(version: 20140419040952) do
 
   add_index "forums", ["slug"], name: "index_forums_on_slug", unique: true
 
+  create_table "topics", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
