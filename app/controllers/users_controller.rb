@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def createtest
+      render 'new'
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
