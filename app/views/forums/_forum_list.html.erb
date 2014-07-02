@@ -8,12 +8,28 @@
   <ul class="list-group">
     <% @forums[category.id].each do |forum| %>
     <li class="list-group-item forum">
-      <a class="forum-icon" href="#">
-        <%= image_tag "forum_read.png" %>
-      </a>
-      <h4><%= link_to forum.title %></h4>
-      <div class="forum-text">
-        <%= forum.description %>
+    <div class="row">
+      <div class="col-sm-6">
+        <a class="forum-icon" href="#">
+          <%= image_tag "forum_read.png" %>
+        </a>
+        <h4><%= link_to forum.title %></h4>
+        <div class="forum-text hidden-xs">
+          <%= forum.description %>
+        </div>
+      </div>
+      <div class="col-sm-2 hidden-xs">
+        <small>
+          0 threads<br />
+          0 replies
+        </small>
+      </div>
+      <div class="col-sm-4 forum-date">
+        <small>
+          last post one hour ago by <a href="#">mikelat</a></br />
+          in <a href="#">mikelat is an amazing guy</a>
+        </small>
+      </div>
       </div>
     </li>
     <% end %>
