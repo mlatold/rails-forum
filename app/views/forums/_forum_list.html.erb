@@ -1,40 +1,32 @@
 <% unless @forums.nil? %>
 <% @forums[0].each do |category| %>
-<div class="panel panel-default forum-list">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= category.title %></h3>
-  </div>
-  <% unless @forums[category.id].nil? %>
-  <ul class="list-group">
-    <% @forums[category.id].each do |forum| %>
-    <li class="list-group-item forum">
-    <div class="row">
-      <div class="col-sm-6">
-        <a class="forum-icon" href="#">
-          <%= image_tag "forum_read.png" %>
-        </a>
-        <h4><%= link_to forum.title %></h4>
-        <div class="forum-text hidden-xs">
-          <%= forum.description %>
+<section class="ink-grid">
+  <div class="column-group forum-list">
+    <div class="heading">
+      <h4><%= category.title %></h4>
+    </div>
+    <% unless @forums[category.id].nil? %>
+      <% @forums[category.id].each do |forum| %>
+      <div class="forum">
+        <div class="forum-name all-60 tiny-100 small-100 medium-50">
+          <h5><%= link_to fa_icon "comment-o" %> <%= link_to forum.title %></h5>
+          <span class="note forum-text hide-tiny">
+            <%= forum.description %>
+          </span>
         </div>
-      </div>
-      <div class="col-sm-2 hidden-xs">
-        <small>
+        <div class="forum-stats medium all-10 hide-tiny small-30 medium-10">
           0 threads<br />
           0 replies
-        </small>
-      </div>
-      <div class="col-sm-4 forum-date">
-        <small>
+        </div>
+        <div class="forum-date medium all-30 tiny-100 small-70 medium-40">
           last post one hour ago by <a href="#">mikelat</a></br />
           in <a href="#">mikelat is an amazing guy</a>
-        </small>
+        </div>
+        <div class="cb clearfix"></div>
       </div>
-      </div>
-    </li>
+      <% end %>
     <% end %>
-  </ul>
-  <% end %>
-</div>
+  </div>
+</section>
 <% end %>
 <% end %>

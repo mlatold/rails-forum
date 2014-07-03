@@ -1,11 +1,13 @@
-<ol class="breadcrumb">
-  <% @breadcrumbs.each do |breadcrumb| %>
-    <% if breadcrumb == @breadcrumbs.last %>
-      <li class="active"><%= breadcrumb[:title] %></li>
-    <% elsif breadcrumb[:url].nil? %>
-      <li><%= breadcrumb[:title] %></li>
-    <% else %>
-      <li><%= link_to breadcrumb[:title], breadcrumb[:url] %></li>
+<nav class="ink-navigation">
+  <ul class="breadcrumbs ">
+    <% @breadcrumbs.each do |breadcrumb| %>
+      <% if breadcrumb == @breadcrumbs.last %>
+        <li class="active"><%= breadcrumb[:title] %></li>
+      <% elsif breadcrumb[:url].nil? %>
+        <li><%= breadcrumb[:title] %></li>
+      <% else %>
+        <li><%= link_to breadcrumb[:title], breadcrumb[:url] %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ol>
+  </ul>
+</nav>

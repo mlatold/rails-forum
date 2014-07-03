@@ -7,24 +7,50 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="ht-default">
-  <nav class="navbar navbar-inverse" role="navigation">
+<body>
+  <div class="top-menu">
+    <nav class="ink-navigation ink-grid">
+      <ul class="menu horizontal black">
+        <li class="active"><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="ink-grid">
+  <%= render "layouts/breadcrumbs" %>
+  <% flash.each do |name, msg| -%>
+    <%= flash_msg name, msg %>
+  <% end -%>
+  </div>
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <footer class="clearfix">
+    <div class="ink-grid">
+      <p class="note">&copy; <%= Time.now.year %> Mike Lat</p>
+    </div>
+  </footer>
+<!--   <nav class="navbar navbar-inverse" role="navigation">
     <div class="container">
       <%= link_to "RailsForum", root_path, class: 'navbar-brand' %>
     </div>
   </nav>
   <div class="container">
-    <%= render "layouts/breadcrumbs" %>
-    <% flash.each do |name, msg| -%>
-      <%= flash_msg name, msg %>
-    <% end -%>
-    <%= yield %>
     <hr />
     <footer>
-      <p>&copy; <%= Time.now.year %> Mike Lat</p>
+      <p></p>
     </footer>
-    <%= debug(params) if Rails.env.development? %>
-  </div>
+
+  </div> -->
+
+  <!-- <%= debug(params) if Rails.env.development? %> -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
+
