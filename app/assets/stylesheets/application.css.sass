@@ -106,16 +106,25 @@
 html, body
   background: #f0f0f0
 
+body
+  padding-top: 45px
+
 .top-menu
   background: #1a1a1a
+  position: fixed
+  width: 100%
+  top: 0
 
 h1, h2, h3, h4, h5, h6
   .fa
     font-size: 100%
 
+.ink-navigation.mobile-menu ul.menu.horizontal li a
+  padding: 0.3em 0.8em
+
+
 .heading
-  background: #444
-  border: 1px #ccc solid
+  background: #1a1a1a
   border-top-left-radius: 10px
   border-top-right-radius: 10px
   padding: 10px 15px
@@ -123,3 +132,6 @@ h1, h2, h3, h4, h5, h6
   *
     color: #fff
     margin: 0
+
+.ink-navigation ul.menu.horizontal li.fr
+  float: right

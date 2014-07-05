@@ -9,13 +9,18 @@
 </head>
 <body>
   <div class="top-menu">
-    <nav class="ink-navigation ink-grid">
+    <nav class="ink-navigation mobile-menu hide-all show-tiny show-small" style="height: 20px;">
       <ul class="menu horizontal black">
-        <li class="active"><a href="#">item</a></li>
-        <li><a href="#">item</a></li>
-        <li><a href="#">item</a></li>
-        <li><a href="#">item</a></li>
-        <li><a href="#">item</a></li>
+        <li><%= link_to fa_icon "bars lg" %></li>
+      </ul>
+    </nav>
+    <nav class="ink-navigation ink-grid hide-tiny hide-small">
+      <ul class="menu horizontal black">
+        <li class="active"><a href="#">Forum</a></li>
+        <li><a href="#">Members</a></li>
+        <li><a href="#">Search</a></li>
+        <li class="fr"><a href="/">Login</a></li>
+        <li class="fr"><a href="/">Register</a></li>
       </ul>
     </nav>
   </div>
